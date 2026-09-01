@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бочаров Вадим Викторович – Резюме</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #333;
+            background: #edefed;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .resume {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 48px 56px;
+            min-height: 100vh;
+        }
+
+        /* ===== TOP BAR ===== */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .header-top-left {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+            padding-top: 6px;
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid #e5e5e5;
+            background: #fff;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s;
+            text-decoration: none;
+        }
+
+        .action-btn:hover {
+            background: #f5f5f5;
+            border-color: #ccc;
+        }
+
+        .action-btn svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
+        .action-btn--download {
+            width: auto;
+            border-radius: 20px;
+            padding: 0 16px;
+            gap: 6px;
+            font-size: 13px;
+            font-family: inherit;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .action-btn--download span {
+            white-space: nowrap;
+        }
+
+        /* ===== HEADER ===== */
+        .header-name {
+            font-size: 36px;
+            font-weight: 700;
+            color: #000;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 6px;
+        }
+
+        .header-meta {
+            font-size: 15px;
+            color: #999;
+            margin-bottom: 24px;
+        }
+
+        .contacts {
+            margin-bottom: 20px;
+        }
+
+        .contacts-line {
+            font-size: 15px;
+            color: #000;
+            line-height: 1.7;
+        }
+
+        .contacts-hint {
+            color: #999;
+        }
+
+        .location-block {
+            font-size: 15px;
+            color: #000;
+            line-height: 1.7;
+        }
+
+        /* ===== SECTIONS ===== */
+        .section {
+            border-top: 1px solid #e5e5e5;
+            padding-top: 28px;
+            margin-top: 32px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 400;
+            color: #999;
+            margin-bottom: 20px;
+            letter-spacing: -0.2px;
+        }
+
+        /* ===== DESIRED POSITION ===== */
+        .position-name {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 14px;
+        }
+
+        .position-details {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .position-details .label {
+            color: #333;
+        }
+
+        /* ===== EXPERIENCE ENTRIES ===== */
+        .entry {
+            display: flex;
+            gap: 36px;
+            margin-bottom: 36px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-dates {
+            flex: 0 0 150px;
+            font-size: 14px;
+            color: #999;
+            line-height: 1.55;
+            padding-top: 4px;
+        }
+
+        .entry-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .company-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 4px;
+            letter-spacing: -0.2px;
+            display: block;
+        }
+
+        .company-name--link {
+            text-decoration: none;
+            color: #3b7bbf;
+        }
+
+        .company-name--link:hover {
+            color: #2a5a8f;
+        }
+
+        .company-meta {
+            font-size: 13px;
+            color: #999;
+            margin-bottom: 4px;
+        }
+
+        .company-link {
+            margin-bottom: 6px;
+        }
+
+        .company-link a {
+            font-size: 14px;
+            color: #0066cc;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        .company-link a:hover {
+            border-bottom-color: #0066cc;
+        }
+
+        .company-desc {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.55;
+            margin-bottom: 14px;
+        }
+
+        .company-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .company-tag {
+            font-size: 12px;
+            color: #555;
+            background: #f2f2f2;
+            padding: 3px 10px;
+            border-radius: 4px;
+            letter-spacing: 0.01em;
+        }
+
+        .job-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 10px;
+        }
+
+        .job-text {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.65;
+        }
+
+        .job-text p {
+            margin-bottom: 10px;
+        }
+
+        .job-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== PET PROJECTS ===== */
+        .project-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 6px;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.65;
+        }
+
+        /* ===== SKILLS ===== */
+        .skill-group {
+            margin-bottom: 14px;
+        }
+
+        .skill-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-group-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 2px;
+        }
+
+        .skill-group-text {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.65;
+        }
+
+        /* ===== EDUCATION ===== */
+        .education-level {
+            font-size: 15px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 12px;
+        }
+
+        .edu-name {
+            font-size: 17px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 4px;
+        }
+
+        .edu-faculty {
+            font-size: 14px;
+            color: #333;
+        }
+
+        /* ===== LANGUAGES (inside skills or standalone) ===== */
+        .lang-row {
+            display: flex;
+            gap: 36px;
+            margin-bottom: 6px;
+        }
+
+        .lang-label {
+            flex: 0 0 150px;
+            font-size: 14px;
+            color: #999;
+        }
+
+        .lang-value {
+            font-size: 14px;
+            color: #333;
+        }
+
+        .lang-value strong {
+            font-weight: 700;
+            color: #000;
+        }
+
+        .contacts-print {
+            display: none;
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            @page {
+                margin: 0;
+            }
+            body {
+                background: #fff;
+            }
+            .resume {
+                padding: 48px 56px;
+                max-width: none;
+                min-height: auto;
+            }
+            .header-actions {
+                display: none;
+            }
+            .contacts-print {
+                display: block;
+            }
+        }
+
+        /* ===== MOBILE ===== */
+        @media (max-width: 640px) {
+            .resume {
+                padding: 28px 24px;
+            }
+
+            .header-name {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 19px;
+            }
+
+            .position-name {
+                font-size: 20px;
+            }
+
+            .entry {
+                flex-direction: column;
+                gap: 6px;
+            }
+
+            .entry-dates {
+                flex: none;
+                padding-top: 0;
+            }
+
+            .company-name {
+                font-size: 19px;
+            }
+
+            .header-actions {
+                gap: 6px;
+                padding-top: 2px;
+            }
+
+            .action-btn {
+                width: 36px;
+                height: 36px;
+            }
+
+            .action-btn svg {
+                width: 16px;
+                height: 16px;
+            }
+
+            .action-btn--download span {
+                display: none;
+            }
+
+            .action-btn--download {
+                width: 36px;
+                padding: 0;
+            }
+
+            .lang-row {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .lang-label {
+                flex: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="resume">
+
+    <!-- ===== HEADER ===== -->
+    <div class="header-top">
+        <div class="header-top-left">
+            <h1 class="header-name">Бочаров Вадим Викторович</h1>
+            <div class="header-meta">25.06.2000</div>
+        </div>
+        <div class="header-actions">
+            <!-- Telegram -->
+            <a href="https://t.me/vadimbocharov" class="action-btn" title="Telegram" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/vadim-bocharov-063471266/" class="action-btn" title="LinkedIn" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <!-- Скачать PDF -->
+            <a href="resume.pdf" download="Бочаров Вадим Викторович – Резюме.pdf" class="action-btn action-btn--download" title="Скачать PDF">
+                <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                <span>Скачать PDF</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="contacts">
+        <div class="contacts-line">+7 (925) 6049629</div>
+        <div class="contacts-line">vadim250600@gmail.com</div>
+        <div class="contacts-line contacts-print">Telegram: @vadimbocharov</div>
+        <div class="contacts-line contacts-print">LinkedIn: linkedin.com/in/vadim-bocharov-063471266</div>
+        <div class="contacts-line">Москва</div>
+    </div>
+
+
+    <!-- ===== ОПЫТ РАБОТЫ ===== -->
+    <section class="section">
+        <h2 class="section-title">Опыт работы – 3 года 2 месяца</h2>
+
+        <!-- sfer.ai -->
+        <div class="entry">
+            <div class="entry-dates">
+                Июль 2025 –<br>
+                настоящее время<br>
+                8 месяцев
+            </div>
+            <div class="entry-content">
+                <a href="https://sfer.ai" target="_blank" rel="noopener" class="company-name company-name--link">sfer.ai</a>
+                <div class="company-tags">
+                    <span class="company-tag">Образование</span>
+                    <span class="company-tag">Консалтинг</span>
+                    <span class="company-tag">Разработка</span>
+                </div>
+
+                <div class="job-title">Бизнес ассистент</div>
+                <div class="job-text">
+                    <p>EdTech-компания: обучение AI-навыкам и автоматизациям b2b и b2c. Основатель – Кирилл Гурбанов.</p>
+                    <p>Администрирую проект: Google Workspace, все учётные записи и сервисы, техническая инфраструктура. Отвечаю за BotHelp (рассылки, цепочки, воронки).</p>
+                    <p>Менторю учеников по вайбкодингу и автоматизациям, выступаю судьей на хакатонах.</p>
+                    <p>Автоматизирую внутренние процессы в компании, создаю маркетинговые кейсы:</p>
+                    <p>Система автоматизации корпоративных финансов: система обрабатывает банковские выписки и выводит метрики в дашборд – руководитель больше не разбирает вручную.</p>
+                    <p>Корпоративный AI-ассистент: все чаты и записи встреч в RAG-базе, любой сотрудник получает нужную информацию через Telegram-бота.</p>
+                    <p>Сайт sfer.ai: навайбкодил с нуля.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Orion -->
+        <div class="entry">
+            <div class="entry-dates">
+                Май 2023 – Май 2025<br>
+                2 года 1 месяц
+            </div>
+            <div class="entry-content">
+                <a href="https://orionvc.co" target="_blank" rel="noopener" class="company-name company-name--link">Orion</a>
+                <div class="company-tags">
+                    <span class="company-tag">Венчурный фонд</span>
+                    <span class="company-tag">AI-стартапы</span>
+                </div>
+
+                <div class="job-title">Аналитик, скаут</div>
+                <div class="job-text">
+                    <p>Pre-seed венчурный фонд с фокусом на AI-стартапы.</p>
+                    <p>Выстроил пайплайн скаутинга стартапов с нуля: 1000+ проектов, одна закрытая сделка (fusara.ai). Управлял командой аутрича (3 чел).</p>
+                    <p>Продуктовая работа с портфельными стартапами: анализ рынков, customer development, поиск партнёров, инвесторов и акселераторов.</p>
+                    <p>Ключевой кейс – EdTech-стартап Spaces (на российском рынке Блоксели, bloxels.ru). Курировал проект как продуктовый лид: выдвинул гипотезу о выходе на российский рынок, определил целевой сегмент, вышел на школы, IT-клубы и центры допобразования, участвовал в первичных продажах. Доказал состоятельность гипотезы – после этого команда масштабировала проект самостоятельно. Результат: 600+ школ, более 10 млн рублей привлечено инвестиций.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Take a place -->
+        <div class="entry">
+            <div class="entry-dates">
+                Декабрь 2022 –<br>
+                Май 2023<br>
+                6 месяцев
+            </div>
+            <div class="entry-content">
+                <div class="company-name">Take a place</div>
+                <div class="company-tags">
+                    <span class="company-tag">Стартап</span>
+                </div>
+
+                <div class="job-title">Бизнес ассистент</div>
+                <div class="job-text">
+                    <p>Стартап-агрегатор коворкингов. (Проект закрылся)</p>
+                    <p>Начинал как ассистент CEO. Затем взял на себя discovery-исследования для пивота продукта из B2C в B2B: поиск респондентов, интервью, анализ данных, конкурентный анализ, оценка рынка. Также вёл продажи корпоративным клиентам.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ОБРАЗОВАНИЕ ===== -->
+    <section class="section">
+        <h2 class="section-title">Образование</h2>
+        <div class="education-level">Высшее</div>
+
+        <div class="entry">
+            <div class="entry-dates">
+                2023<br>
+                Высшее
+            </div>
+            <div class="entry-content">
+                <div class="edu-name">Московский государственный лингвистический университет, Москва</div>
+                <div class="edu-faculty">ИМПП, специалитет</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== НАВЫКИ ===== -->
+    <section class="section">
+        <h2 class="section-title">Навыки</h2>
+
+        <div class="lang-row">
+            <div class="lang-label">Знание языков</div>
+            <div class="lang-value"><strong>Русский</strong> – Родной</div>
+        </div>
+        <div class="lang-row">
+            <div class="lang-label"></div>
+            <div class="lang-value"><strong>Английский</strong> – B2</div>
+        </div>
+        <div class="lang-row">
+            <div class="lang-label"></div>
+            <div class="lang-value"><strong>Китайский</strong> – HSK3</div>
+        </div>
+    </section>
+
+
+</div>
+
+</body>
+</html>
